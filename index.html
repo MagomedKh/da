@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>BIG DICK</title>
+
+   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css">
+   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js"></script>
+   <style>
+      h1 {
+         opacity: 0.3;
+      }
+
+      .hui {
+         animation: rotate-scale-up 3s linear both
+      }
+
+      @keyframes rotate-scale-up {
+         0% {
+            transform: scale(1) rotateZ(0)
+         }
+
+         50% {
+            transform: scale(2) rotateZ(180deg)
+         }
+
+         100% {
+            transform: scale(1) rotateZ(360deg);
+            opacity: 1;
+         }
+      }
+
+      @media (max-width: 768px) {
+         h1 {
+            font-size: 115px !important;
+         }
+      }
+   </style>
+
+</head>
+
+<body>
+   <div class="container">
+      <button class="btn btn-primary">
+         Пожалуйста, нажми меня <3 </button>
+            <h1
+               style="user-select: none; display: flex; height: 80vh; text-align: center; justify-content: center; align-items: center; font-size: 200px">
+            </h1>
+   </div>
+   <script>
+      document.querySelector('button').addEventListener('click', () => { document.querySelector('h1').innerHTML = 'ИДИ НАХУЙ'; document.querySelector('h1').classList.add('hui') })
+   </script>
+</body>
+
+</html>
