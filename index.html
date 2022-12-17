@@ -14,23 +14,14 @@
          opacity: 0.3;
       }
 
-      .hui {
-         animation: rotate-scale-up 3s linear both
+      .opacity {
+         transition: opacity 3s linear;
+         opacity: 0;
       }
 
-      @keyframes rotate-scale-up {
-         0% {
-            transform: scale(1) rotateZ(0)
-         }
-
-         50% {
-            transform: scale(2) rotateZ(180deg)
-         }
-
-         100% {
-            transform: scale(1) rotateZ(360deg);
-            opacity: 1;
-         }
+      .hui {
+         animation: color 5s linear both infinite;
+         animation-timing-function: cubic-bezier(.87,1.91,.69,.68);
       }
 
       @media (max-width: 768px) {
@@ -38,20 +29,62 @@
             font-size: 115px !important;
          }
       }
+      .img {
+
+         animation: circle 10s both linear infinite;
+      }
+      @keyframes circle {
+         from {
+            transform: rotate(0);
+         }
+         to {
+            transform: rotate(360deg);
+         }
+      }
+
+      @keyframes color {
+         0% {
+            color: black;
+            transform: scale(1) rotateZ(0)
+         }
+         20% {color: yellow;
+            
+         }
+         40% {
+            color: blue;
+         }
+         60% {
+            color: orange;
+            transform: scale(2) rotateZ(180deg)
+
+         }
+         80% {
+            color: gray;
+         }
+         100% {
+            color: red;transform: scale(1) rotateZ(360deg);
+            opacity: 1;
+         }
+      }
    </style>
 
 </head>
 
-<body>
+<body style="overflow: hidden;">
    <div class="container">
       <button class="btn btn-primary">
-         Пожалуйста, нажми меня <3 </button>
+         Пожалуйста, нажми меня <3 
+      </button>
             <h1 style="user-select: none; display: flex; height: 80vh; text-align: center; justify-content: center; align-items: center; font-size: 200px"
                title="иди блять нахуй">
             </h1>
+            <img style="opacity: 0; height: 12%; position: absolute; top: 5%; z-index: -1;;" src="http://www.kemerinfo.ru/IMG_BAZA/200000000004612big.jpg" alt="">
    </div>
    <script>
-      document.querySelector('button').addEventListener('click', () => { document.querySelector('h1').innerHTML = 'ИДИ НАХУЙ'; document.querySelector('h1').classList.add('hui') })
+      const btn = document.querySelector('button');
+      const text = document.querySelector('h1')
+      const img=document.querySelector('img')
+      btn.addEventListener('click', () => { img.style.opacity = 1; img.classList.add('img'); text.innerHTML = 'ИДИ НАХУЙ'; btn.classList.add('opacity'); btn.textContent='ТЕБЯ НАЕБАЛИ'; text.classList.add('hui') })
    </script>
 </body>
 
